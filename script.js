@@ -172,12 +172,15 @@ const logo = document.getElementById("logoLink");
 logo?.addEventListener("click", (e) => {
   e.preventDefault();
 
+  closeMobileMenu();
   window.location.hash = "/";
   window.scrollTo({ top: 0, behavior: "smooth" });
 
-  renderRoute(); // re-render home page
+  setTimeout(() => {
+    renderRoute();
+    updateLogo();
+  }, 0);
 });
-
 const detailedServices = [
   {
     id: "standard",
@@ -293,6 +296,22 @@ function getCurrentPath() {
   return hash.replace("#", "") || "/";
 }
 
+function updateLogo() {
+  const logoImg = document.getElementById("siteLogo");
+  if (!logoImg) return;
+
+  const isHome = getCurrentPath() === "/";
+  const isScrolled = window.scrollY > 20;
+
+  if (isHome && !isScrolled) {
+    // homepage top over purple hero
+    logoImg.src = "img/ANGEL CITY MAIDS Logo-10.png"; 
+  } else {
+    // scrolled navbar or inner pages
+    logoImg.src = "img/ANGEL CITY MAIDS Logo-09.png";
+  }
+}
+
 function initRouter() {
   window.addEventListener("hashchange", renderRoute);
   renderRoute();
@@ -305,6 +324,7 @@ function renderRoute() {
   app.innerHTML = render();
 
   updateNavState(path);
+  updateLogo();
   initPageFeatures(path);
   window.scrollTo(0, 0);
 
@@ -469,7 +489,14 @@ function handleNavbarScroll() {
   const scrolled = window.scrollY > 20;
 
   navbar.classList.toggle("scrolled", scrolled);
-  if (!isHome) navbar.classList.add("not-home");
+
+  if (!isHome) {
+    navbar.classList.add("not-home");
+  } else {
+    navbar.classList.remove("not-home");
+  }
+
+  updateLogo();
 }
 
 function openMobileMenu() {
