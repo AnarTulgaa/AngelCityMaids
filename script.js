@@ -167,6 +167,17 @@ const cities = [
   "Culver City",
 ];
 
+const logo = document.getElementById("logoLink");
+
+logo?.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  window.location.hash = "/";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  renderRoute(); // re-render home page
+});
+
 const detailedServices = [
   {
     id: "standard",

@@ -1,36 +1,39 @@
 :root {
-  --brand-50: #E6F7FA;
-  --brand-100: #CCEFF5;
-  --brand-200: #99DFEB;
-  --brand-300: #66CFE0;
-  --brand-400: #33BFD6;
-  --brand-500: #0AADCC;
-  --brand-600: #088CA8;
-  --brand-700: #066B80;
-  --brand-800: #044A59;
-  --brand-900: #033640;
+  /* Lakers purple */
+  --brand-50: #f4edff;
+  --brand-100: #e6d6ff;
+  --brand-200: #cfb0ff;
+  --brand-300: #b88aff;
+  --brand-400: #9d5cff;
+  --brand-500: #552583; /* Lakers purple */
+  --brand-600: #4a1f73;
+  --brand-700: #3d1961;
+  --brand-800: #2f124d;
+  --brand-900: #210b36;
 
-  --navy-50: #E8EBF0;
-  --navy-100: #D1D7E1;
-  --navy-200: #A3AFC3;
-  --navy-300: #7587A5;
-  --navy-400: #475F87;
-  --navy-500: #1E3A5F;
-  --navy-600: #182E4C;
-  --navy-700: #122339;
-  --navy-800: #0C1726;
-  --navy-900: #060B13;
+  /* Replace navy with dark purple */
+  --navy-50: #f3eef8;
+  --navy-100: #ddd0ea;
+  --navy-200: #bba6d2;
+  --navy-300: #9a7dba;
+  --navy-400: #7b5ca0;
+  --navy-500: #5c3f84;
+  --navy-600: #472f68;
+  --navy-700: #34224d;
+  --navy-800: #241734;
+  --navy-900: #160d1f;
 
-  --gold-50: #FEF6E9;
-  --gold-100: #FDF0D3;
-  --gold-200: #FBE1A7;
-  --gold-300: #F9D27B;
-  --gold-400: #F7C34F;
-  --gold-500: #F5A623;
-  --gold-600: #D98E1A;
-  --gold-700: #B37515;
-  --gold-800: #8C5C10;
-  --gold-900: #66430C;
+  /* Lakers gold */
+  --gold-50: #fff8e1;
+  --gold-100: #ffefb3;
+  --gold-200: #ffe082;
+  --gold-300: #ffd54f;
+  --gold-400: #ffca28;
+  --gold-500: #fdb927; /* Lakers gold */
+  --gold-600: #e0a41f;
+  --gold-700: #c58e18;
+  --gold-800: #9f7313;
+  --gold-900: #7a580d;
 
   --container: 1200px;
   --shadow-sm: 0 8px 24px rgba(6, 11, 19, 0.06);
@@ -101,11 +104,13 @@ p {
 }
 
 .section-muted {
-  background: var(--navy-50);
+  background: #f7f3ff;
+  background-image: radial-gradient(#e7dcff 1px, transparent 1px);
+  background-size: 18px 18px;
 }
 
 .section-brand {
-  background: var(--brand-50);
+  background: #f4edff;
 }
 
 .text-center {
@@ -113,9 +118,9 @@ p {
 }
 
 .section-label {
-  color: var(--brand-600);
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  color: var(--gold-600);
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-size: 0.8rem;
   display: block;
@@ -150,18 +155,18 @@ p {
 
 .btn-primary {
   background: var(--gold-500);
-  color: var(--navy-900);
+  color: var(--brand-900);
   box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
-  background: var(--gold-600);
+  background: var(--gold-400);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
-  background: rgba(255,255,255,0.1);
+  background: var(--brand-600);
   color: white;
   border: 1px solid rgba(255,255,255,0.3);
   backdrop-filter: blur(8px);
@@ -288,7 +293,7 @@ p {
 
 .navbar.scrolled .logo-text,
 .navbar.not-home .logo-text {
-  color: var(--brand-600);
+  color: var(--brand-700);
 }
 
 .desktop-nav {
@@ -447,7 +452,12 @@ position: fixed;
 }
 
 .hero-overlay {
-  background: linear-gradient(90deg, rgba(6,11,19,0.96) 0%, rgba(6,11,19,0.82) 45%, rgba(6,11,19,0.4) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(34, 12, 58, 0.96),
+    rgba(85, 37, 131, 0.85),
+    rgba(85, 37, 131, 0.45)
+  );
 }
 
 .hero-content {
@@ -477,7 +487,7 @@ position: fixed;
 }
 
 .hero-title span {
-  color: var(--brand-400);
+  color: var(--gold-500);
 }
 
 .hero-text {
@@ -510,14 +520,28 @@ position: fixed;
   font-weight: 500;
 }
 
+.step-number,
+.badge-popular {
+  background: var(--gold-500);
+  color: var(--brand-900);
+}
+
+.trust-icon,
+.step-number,
+.map-pin,
+.carousel-dots button.active,
+.badge-popular {
+  color: var(--gold-500);
+}
+
 .trust-icon {
   width: 44px;
   height: 44px;
   border-radius: 999px;
   display: grid;
   place-items: center;
-  background: rgba(10,173,204,0.16);
-  color: var(--brand-400);
+  background: rgba(253, 185, 39, 0.16);
+  color: var(--gold-500);
 }
 
 /* Generic grids */
@@ -562,11 +586,11 @@ position: fixed;
 }
 
 .service-icon {
-  width: 56px;
+   width: 56px;
   height: 56px;
   border-radius: 18px;
-  background: var(--brand-50);
-  color: var(--brand-600);
+  background: var(--gold-50);
+  color: var(--gold-600);
   display: grid;
   place-items: center;
   margin-bottom: 1.5rem;
@@ -574,8 +598,8 @@ position: fixed;
 }
 
 .service-card:hover .service-icon {
-  background: var(--brand-500);
-  color: white;
+  background: var(--gold-500);
+  color: var(--brand-900);
 }
 
 .service-card h3 {
@@ -588,7 +612,7 @@ position: fixed;
 }
 
 .text-link {
-  color: var(--brand-600);
+  color: var(--gold-600);
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -621,11 +645,11 @@ position: fixed;
 }
 
 .feature-icon {
-  width: 64px;
+ width: 64px;
   height: 64px;
   border-radius: 999px;
-  background: var(--brand-500);
-  color: white;
+  background: var(--gold-500);
+  color: var(--brand-900);
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -683,7 +707,7 @@ position: fixed;
   height: 32px;
   border-radius: 999px;
   background: var(--gold-500);
-  color: white;
+  color: var(--brand-900);
   font-size: 0.85rem;
   font-weight: 800;
   display: grid;
@@ -692,7 +716,7 @@ position: fixed;
 }
 
 .step-circle i {
-  color: var(--brand-500);
+  color: var(--gold-600);
 }
 
 .step-card p {
@@ -802,7 +826,7 @@ position: fixed;
 }
 
 .carousel-dots button.active {
-  background: var(--brand-500);
+  background: var(--gold-500);
 }
 
 /* Service areas */
@@ -862,12 +886,18 @@ position: fixed;
 .map-pin {
   position: absolute;
   animation: bounce 2s infinite;
+  color: var(--gold-500);
 }
 
-.map-pin.pin1 { top: 24%; left: 24%; }
+.map-pin.pin1 { top: 24%; left: 24%; } 
 .map-pin.pin2 { top: 34%; right: 30%; animation-delay: 0.2s; color: var(--gold-500); }
 .map-pin.pin3 { bottom: 30%; left: 48%; animation-delay: 0.4s; color: var(--brand-600); }
 .map-pin.pin4 { bottom: 24%; right: 24%; animation-delay: 0.6s; color: var(--navy-500); }
+
+.map-pin.pin1 { color: var(--gold-500); }
+.map-pin.pin2 { color: var(--brand-500); }
+.map-pin.pin3 { color: var(--gold-500); }
+.map-pin.pin4 { color: var(--brand-500); }
 
 .map-label {
   position: relative;
@@ -955,8 +985,18 @@ position: fixed;
 .cta-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--brand-500), var(--brand-700));
+  background: linear-gradient(
+    135deg,
+    #552583,
+    #3d1961
+  );
   padding: 7rem 0;
+}
+
+.price-card.popular,
+.mission-box,
+.cta-service-card {
+  border: 1px solid rgba(253, 185, 39, 0.35);
 }
 
 .cta-wave {
@@ -1308,7 +1348,7 @@ textarea.form-control {
   left: 50%;
   transform: translate(-50%, -50%);
   background: var(--gold-500);
-  color: var(--navy-900);
+  color: var(--brand-900);
   font-weight: 800;
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
@@ -1438,7 +1478,7 @@ textarea.form-control {
 
 /* Footer */
 .site-footer {
-  background: var(--navy-800);
+  background: #1c0f2b;
   color: white;
   padding-top: 4rem;
   padding-bottom: 2rem;
