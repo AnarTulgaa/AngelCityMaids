@@ -1,40 +1,148 @@
 const routes = {
-  "/": renderHomePage,
+ "/": renderHomePage,
   "/services": renderServicesPage,
   "/pricing": renderPricingPage,
   "/about": renderAboutPage,
   "/contact": renderContactPage,
+  "/terms": renderTermsPage,
+  "/privacy": renderPrivacyPage,
 };
+
+function renderTermsPage() {
+  return `
+    <main style="padding-top: 6rem;">
+      <section class="page-hero light">
+        <div class="container text-center reveal">
+          <h1>Terms of Service</h1>
+        </div>
+      </section>
+
+      <section class="section section-lg">
+        <div class="container" style="max-width: 900px;">
+          <div class="contact-card reveal">
+            <p>At Angel City Maid, we are committed to delivering exceptional cleaning services to our customers throughout California. By booking our services, you agree to the following terms and conditions:</p>
+
+            <h2>Booking & Scheduling</h2>
+            <p>Appointments can be scheduled online, by phone, or via email. All bookings are subject to availability and confirmation. Please ensure that accurate details regarding your home (size, condition, and specific needs) are provided to ensure proper service planning.</p>
+
+            <h2>Pricing & Payment</h2>
+            <p>Our pricing is customized based on the size, layout, and condition of your property, as well as the type of service requested. Final pricing may be adjusted if the home’s condition differs significantly from the initial description.</p>
+            <p>Payment is due upon completion of service unless otherwise agreed. We accept major credit/debit cards and approved digital payment methods.</p>
+
+            <h2>Cancellations & Rescheduling</h2>
+            <p>We kindly request at least 24 hours’ notice for any cancellations or changes.</p>
+            <p>Cancellations made within 24 hours may incur a fee of up to 50% of the scheduled service.</p>
+            <p>Same-day cancellations or missed appointments may be charged at full service value.</p>
+
+            <h2>Access to Property</h2>
+            <p>Clients are responsible for ensuring access to the property at the scheduled time. This may include providing entry codes, keys, or on-site access.</p>
+            <p>If our team is unable to access the property, a lockout fee may apply. For safety, please secure pets or inform us in advance.</p>
+
+            <h2>Scope of Services</h2>
+            <p>Our team focuses on detailed and efficient cleaning within reasonable limits.</p>
+            <p>We do not move heavy furniture (generally over 30–50 lbs)</p>
+            <p>We do not handle hazardous materials, including biohazards or severe mold</p>
+            <p>Excessive clutter may limit the areas we can clean effectively</p>
+
+            <h2>Satisfaction Guarantee</h2>
+            <p>Your satisfaction is important to us. If you are not fully satisfied, please notify us within 24 hours of service. We will gladly return to address any missed areas at no additional cost.</p>
+
+            <h2>Damages & Liability</h2>
+            <p>We are fully insured and take great care in your home. In the rare event of damage:</p>
+            <p>Claims must be reported within 24–48 hours of service</p>
+            <p>We will assess and resolve valid claims promptly</p>
+            <p>We are not responsible for pre-existing damage, normal wear and tear, or improperly secured items</p>
+
+            <h2>Health & Safety Compliance (California Standards)</h2>
+            <p>In accordance with California health and safety guidelines:</p>
+            <p>Our team reserves the right to refuse or stop service in unsafe conditions</p>
+            <p>Clients must disclose any hazards such as pests, mold, or ongoing construction</p>
+            <p>We follow safe handling practices for cleaning chemicals in compliance with state regulations</p>
+
+            <h2>Supplies & Equipment</h2>
+            <p>We provide all necessary professional-grade cleaning supplies and equipment. Eco-friendly or hypoallergenic products are available upon request.</p>
+
+            <h2>Recurring Services</h2>
+            <p>Recurring service clients (weekly, bi-weekly, or monthly) agree to ongoing scheduling unless canceled with prior notice. Pricing adjustments, if necessary, will be communicated in advance.</p>
+
+            <h2>Privacy Policy (California Consumer Privacy Act – CCPA)</h2>
+            <p>We respect your privacy. Any personal information collected is used solely for scheduling and service purposes. In compliance with the California Consumer Privacy Act (CCPA):</p>
+            <p>We do not sell or share your personal data</p>
+            <p>You may request access to or deletion of your personal information at any time</p>
+
+            <h2>Changes to Terms</h2>
+            <p>We reserve the right to update these Terms of Service at any time. Continued use of our services constitutes acceptance of any revised terms.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  `;
+}
+
+function renderPrivacyPage() {
+  return `
+    <main style="padding-top: 6rem;">
+      <section class="page-hero light">
+        <div class="container text-center reveal">
+          <h1>Privacy Policy</h1>
+        </div>
+      </section>
+
+      <section class="section section-lg">
+        <div class="container" style="max-width: 900px;">
+          <div class="contact-card reveal">
+            <p>We respect your privacy. Any personal information collected is used solely for scheduling and service purposes.</p>
+            <p>In compliance with the California Consumer Privacy Act (CCPA):</p>
+            <p>We do not sell or share your personal data</p>
+            <p>You may request access to or deletion of your personal information at any time</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  `;
+}
 
 const services = [
   {
     title: "Standard Cleaning",
-    description: "Perfect for maintaining a clean and healthy home on a regular basis.",
+    description: "Standard Cleaning",
     icon: "home",
     link: "#/services",
   },
   {
     title: "Deep Cleaning",
-    description: "A thorough top-to-bottom clean for homes that need extra attention.",
+    description: "Deep Cleaning",
     icon: "sparkles",
     link: "#/services",
   },
   {
-    title: "Move-In / Move-Out",
-    description: "Ensure your old or new home is spotless for the next chapter.",
+    title: "Move-in/Move-out Cleaning",
+    description: "Move-in/Move-out Cleaning",
     icon: "key",
     link: "#/services",
   },
   {
-    title: "Airbnb Cleaning",
-    description: "Fast, reliable turnover cleaning to keep your guests happy and reviews high.",
+    title: "AirBnB Cleaning",
+    description: "AirBnB Cleaning",
     icon: "building",
     link: "#/services",
   },
   {
     title: "Office Cleaning",
-    description: "Professional commercial cleaning for a productive workspace.",
+    description: "Office Cleaning",
     icon: "briefcase",
+    link: "#/services",
+  },
+  {
+    title: "Post-Construction Cleaning",
+    description: "Post-Construction Cleaning",
+    icon: "hammer",
+    link: "#/services",
+  },
+  {
+    title: "Professional Janitorial Cleaning",
+    description: "Professional Janitorial Cleaning",
+    icon: "shield-check",
     link: "#/services",
   },
 ];
@@ -125,45 +233,46 @@ const testimonials = [
 
 const faqs = [
   {
-    question: "What is included in a standard cleaning?",
+    question: "How do I book a cleaning?",
     answer:
-      "Our standard cleaning includes dusting all surfaces, vacuuming and mopping floors, cleaning bathrooms (toilets, showers, sinks, mirrors), and cleaning the kitchen (counters, sink, outside of appliances, microwave inside). We also empty all trash bins.",
+      "Appointments can be scheduled online, by phone, or by email. All bookings are subject to availability and confirmation.",
   },
   {
-    question: "Do I need to provide cleaning supplies?",
+    question: "How is pricing determined?",
     answer:
-      "No, our professional cleaners bring all their own high-quality, eco-friendly cleaning supplies and equipment. If you have a specific product you prefer us to use on certain surfaces, just let us know and leave it out for the team.",
-  },
-  {
-    question: "Do I need to be home during the cleaning?",
-    answer:
-      "It is completely up to you! Many of our clients provide us with a spare key, garage code, or lockbox code so we can clean while they are at work. If you prefer to be home, that is perfectly fine too.",
+      "Pricing is based on the size, layout, condition of the property, and the type of cleaning requested. Final pricing may be adjusted if the home condition differs significantly from the original description.",
   },
   {
     question: "What is your cancellation policy?",
     answer:
-      "We require 24 hours notice for cancellations or rescheduling. Cancellations made with less than 24 hours notice may be subject to a $50 cancellation fee, as we have reserved that time specifically for you.",
+      "We kindly request at least 24 hours' notice for cancellations or changes. Cancellations made within 24 hours may incur a fee of up to 50% of the scheduled service. Same-day cancellations or missed appointments may be charged at full service value.",
   },
   {
-    question: "Are your cleaners insured and background checked?",
+    question: "Do I need to provide cleaning supplies?",
     answer:
-      "Yes, absolutely. Every member of our cleaning team undergoes a thorough background check, reference check, and rigorous training. Angel City Maids is fully licensed, bonded, and insured for your peace of mind.",
+      "No. We provide all necessary professional-grade cleaning supplies and equipment. Eco-friendly or hypoallergenic products are also available upon request.",
   },
   {
-    question: "How do I pay for the service?",
+    question: "What if I am not satisfied with the cleaning?",
     answer:
-      "We accept all major credit cards. A hold is placed on your card the day before service, but you are not actually charged until after the cleaning is completed to your satisfaction.",
+      "Your satisfaction matters to us. If you are not fully satisfied, please notify us within 24 hours of service and we will gladly return to address any missed areas at no additional cost.",
+  },
+  {
+    question: "Are there any cleaning limitations?",
+    answer:
+      "Yes. We do not move heavy furniture, handle hazardous materials such as biohazards or severe mold, and excessive clutter may limit the areas we can clean effectively.",
   },
 ];
 
 const cities = [
   "Los Angeles",
-  "Pasadena",
-  "Burbank",
-  "Glendale",
-  "Santa Monica",
-  "Beverly Hills",
   "West Hollywood",
+  "Pasadena",
+  "Santa Monica",
+  "Burbank",
+  "Beverly Hills",
+  "Glendale",
+  "Studio City",
   "Culver City",
 ];
 
@@ -185,54 +294,172 @@ const detailedServices = [
   {
     id: "standard",
     title: "Standard Cleaning",
-    description:
-      "Our standard cleaning service is perfect for maintaining a consistently clean and healthy home. We recommend this service weekly, bi-weekly, or monthly.",
-    image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
-    time: "2 - 4 hours",
-    includes: [
-      "Dusting all accessible surfaces",
-      "Wiping down exterior of appliances",
-      "Cleaning and sanitizing countertops and sinks",
-      "Cleaning toilets, tubs, and showers",
-      "Vacuuming and mopping all floors",
-      "Emptying trash bins",
-      "Making beds (upon request)",
-    ],
+    description: "",
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+    time: "",
+    includes: [],
   },
   {
     id: "deep",
     title: "Deep Cleaning",
-    description:
-      "A comprehensive top-to-bottom clean. Ideal for spring cleaning, before hosting an event, or if your home has not been professionally cleaned in the last 3 months.",
-    image:
-      "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80",
-    time: "4 - 8 hours",
-    includes: [
-      "Everything in Standard Cleaning",
-      "Dusting baseboards, doors, and frames",
-      "Cleaning inside window sills and tracks",
-      "Detailed scrubbing of bathroom tile grout",
-      "Cleaning exterior of cabinets",
-      "Dusting ceiling fans and light fixtures",
-      "Moving light furniture to clean underneath",
-    ],
+    description: "",
+    image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80",
+    time: "",
+    includes: [],
   },
   {
     id: "move",
-    title: "Move-In / Move-Out Cleaning",
+    title: "Move-in/Move-out Cleaning",
+    description: "",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    time: "",
+    includes: [],
+  },
+  {
+    id: "office",
+    title: "Office Cleaning",
     description:
-      "Make sure your old home is spotless to get your deposit back, or ensure your new home is perfectly sanitized before you unpack your life.",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    time: "5 - 10 hours",
+      "A clean office isn’t just about appearance—it’s about creating a healthier, more productive environment for your team and a lasting impression for your clients. Our office cleaning services are designed to keep your workspace spotless, organized, and welcoming every day. We specialize in reliable, detail-oriented cleaning tailored to your business needs. From daily maintenance to deep cleaning, our trained professionals use high-quality products and proven techniques to ensure every corner of your office shines. Whether you run a small office or a large corporate space, we provide flexible scheduling, consistent results, and exceptional service you can count on. Let us handle the cleaning—so you can focus on growing your business.",
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+    time: "",
     includes: [
-      "Everything in Deep Cleaning",
-      "Cleaning inside all empty cabinets and drawers",
-      "Cleaning inside the refrigerator",
-      "Cleaning inside the oven",
-      "Spot cleaning walls",
-      "Sweeping garage or patio (if requested)",
+      "General Cleaning",
+      "Dusting desks, surfaces, and office furniture",
+      "Emptying trash and recycling bins",
+      "Vacuuming carpets and mopping floors",
+      "Restroom Cleaning & Sanitizing",
+      "Cleaning and disinfecting toilets, sinks, and fixtures",
+      "Restocking paper products and soap",
+      "Floor cleaning and odor control",
+      "Kitchen & Breakroom Cleaning",
+      "Cleaning countertops, tables, and sinks",
+      "Wiping down appliances (microwaves, refrigerators, etc.)",
+      "Trash removal and floor care",
+      "High-Touch Surface Disinfection",
+      "Door handles, light switches, keyboards, and shared equipment",
+      "Regular sanitization to reduce germs and bacteria",
+      "Glass & Window Cleaning (Interior)",
+      "Cleaning interior windows and glass partitions",
+      "Removing smudges and fingerprints",
+      "Floor Care",
+      "Sweeping, mopping, and vacuuming",
+      "Optional deep cleaning (carpet shampoo, floor polishing)",
+      "Customized Cleaning Plans",
+      "Daily, weekly, or monthly service options",
+      "Tailored solutions based on your office size and needs",
+    ],
+  },
+  {
+    id: "airbnb",
+    title: "AirBnB Cleaning",
+    description:
+      "Elevate your guest experience with our luxury Airbnb cleaning services. We deliver immaculate, hotel-quality results with meticulous attention to every detail—from pristine linens to perfectly styled spaces. Designed for hosts who expect excellence, our reliable and discreet service ensures your property is always flawless, inviting, and five-star ready.",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+    time: "",
+    includes: [
+      "Full Property Cleaning",
+      "Dusting all surfaces, furniture, and décor",
+      "Vacuuming carpets and rugs, mopping floors",
+      "Removing trash and replacing liners",
+      "Bedroom Reset",
+      "Changing and making beds with fresh linens",
+      "Fluffing pillows and staging the space",
+      "Checking for guest belongings",
+      "Bathroom Cleaning & Sanitizing",
+      "Disinfecting toilets, showers, tubs, and sinks",
+      "Cleaning mirrors and fixtures",
+      "Restocking essentials (toilet paper, toiletries if provided)",
+      "Kitchen Cleaning",
+      "Cleaning countertops, cabinets, and backsplash",
+      "Washing dishes or loading dishwasher",
+      "Wiping down appliances (microwave, fridge, stove)",
+      "High-Touch Surface Disinfection",
+      "Door handles, remotes, switches, and frequently used items",
+      "Sanitizing to maintain a hygienic environment",
+      "Interior Window & Glass Cleaning",
+      "Removing smudges from mirrors, glass doors, and windows",
+      "Turnover Inspection",
+      "Checking for damages or missing items",
+      "Reporting issues promptly",
+      "Ensuring everything is in place for the next guest",
+      "Restocking Supplies (Optional)",
+      "Toiletries, paper goods, and cleaning essentials",
+      "Replenishing guest welcome items",
+      "Laundry Service (Optional)",
+      "Washing, drying, and folding linens and towels",
+      "Replacing with fresh sets",
+      "Staging & Final Touches",
+      "Arranging furniture and décor neatly",
+      "Creating a clean, inviting, hotel-like presentation",
+    ],
+  },
+  {
+    id: "construction",
+    title: "Post-Construction Cleaning",
+    description:
+      "Transform your newly built or renovated space into a flawless, move-in-ready environment. Our post-construction cleaning services deliver meticulous, detail-driven results—removing dust, debris, and residue to reveal a pristine finish. With a focus on precision and excellence, we ensure every surface is polished to perfection, leaving your space clean, refined, and ready to impress.",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    time: "",
+    includes: [
+      "Detailed Dust Removal",
+      "Elimination of fine dust from all surfaces, including walls, ceilings, baseboards, and fixtures",
+      "Careful cleaning of vents, light fixtures, and hard-to-reach areas",
+      "Surface Cleaning & Polishing",
+      "Wiping and polishing of countertops, cabinets, and built-ins",
+      "Removing construction residue, smudges, and adhesive marks",
+      "Floor Care",
+      "Vacuuming, sweeping, and mopping all flooring surfaces",
+      "Deep cleaning to remove dust, debris, and buildup",
+      "Window & Glass Cleaning",
+      "Interior window, frame, and sill cleaning",
+      "Removal of stickers, paint splatter, and construction residue",
+      "Kitchen & Bathroom Detailing",
+      "Deep cleaning and sanitizing of sinks, faucets, appliances, and fixtures",
+      "Polishing surfaces to a spotless, showroom-quality finish",
+      "Debris & Trash Removal",
+      "Collection and removal of leftover construction debris and materials",
+      "Leaving the space clean, safe, and presentable",
+      "Final Touch & Inspection",
+      "Thorough walkthrough to ensure every detail meets our high standards",
+      "Preparing the space for immediate use, staging, or handover",
+    ],
+  },
+  {
+    id: "janitorial",
+    title: "Professional Janitorial Cleaning",
+    description:
+      "Maintain a pristine, polished workspace with our premium janitorial cleaning services. We provide consistent, detail-oriented care designed to uphold the highest standards of cleanliness and professionalism. With a focus on reliability, discretion, and excellence, our team ensures your environment remains spotless, healthy, and always ready to impress.",
+    image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=800&q=80",
+    time: "",
+    includes: [
+      "Daily & Routine Cleaning",
+      "Dusting surfaces, furniture, and work areas",
+      "Emptying trash and recycling bins",
+      "General tidying and upkeep",
+      "Restroom Cleaning & Sanitization",
+      "Thorough disinfection of toilets, sinks, and fixtures",
+      "Restocking paper products and soap",
+      "Odor control and floor cleaning",
+      "Floor Care",
+      "Sweeping, vacuuming, and mopping",
+      "Detailed care for all flooring types",
+      "Optional polishing and deep cleaning services",
+      "Breakroom & Kitchen Cleaning",
+      "Cleaning countertops, tables, and sinks",
+      "Wiping down appliances and cabinets",
+      "Maintaining a clean, hygienic shared space",
+      "High-Touch Surface Disinfection",
+      "Door handles, light switches, and shared equipment",
+      "Routine sanitization to promote a healthy environment",
+      "Glass & Surface Detailing",
+      "Interior glass, mirrors, and partitions",
+      "Smudge-free, polished finishes",
+      "Supply Management (Optional)",
+      "Monitoring and restocking essential supplies",
+      "Ensuring your facility remains fully equipped",
+      "Customized Cleaning Plans",
+      "Flexible scheduling (daily, weekly, or custom)",
+      "Services tailored to your business size and requirements",
     ],
   },
 ];
@@ -240,44 +467,23 @@ const detailedServices = [
 const plans = [
   {
     name: "Basic Cleaning",
-    priceRange: "$120 - $180",
-    description: "Perfect for regular upkeep.",
-    features: [
-      "Dusting all surfaces",
-      "Vacuuming & mopping",
-      "Bathroom sanitization",
-      "Kitchen counter & sink",
-      "Trash removal",
-      "1-2 Cleaners",
-    ],
+    priceRange: "$150 - $180",
+    description: "",
+    features: [],
     popular: false,
   },
   {
     name: "Deep Cleaning",
-    priceRange: "$200 - $350",
-    description: "Thorough top-to-bottom clean.",
-    features: [
-      "Everything in Basic",
-      "Baseboards & doors",
-      "Inside window sills",
-      "Detailed grout scrubbing",
-      "Cabinet exteriors",
-      "2-3 Cleaners",
-    ],
-    popular: true,
+    priceRange: "$220 - $350",
+    description: "",
+    features: [],
+    popular: false,
   },
   {
-    name: "Move-Out Clean",
-    priceRange: "$250 - $450",
-    description: "Get your deposit back.",
-    features: [
-      "Everything in Deep Clean",
-      "Inside all cabinets",
-      "Inside refrigerator",
-      "Inside oven",
-      "Spot clean walls",
-      "Guaranteed satisfaction",
-    ],
+    name: "Move-Out Cleaning",
+    priceRange: "$285 - $450",
+    description: "",
+    features: [],
     popular: false,
   },
 ];
@@ -285,9 +491,9 @@ const plans = [
 const addons = [
   { name: "Inside Oven", price: "+$30" },
   { name: "Inside Fridge", price: "+$25" },
-  { name: "Interior Windows", price: "+$40" },
-  { name: "Laundry (per load)", price: "+$35" },
-  { name: "Baseboard Detail", price: "+$45" },
+  { name: "Interior Windows", price: "+$40 (10 per window)" },
+  { name: "Laundry (per load)", price: "+$20" },
+  { name: "Pet Hair Removal", price: "+$35" },
   { name: "Patio Sweep", price: "+$20" },
 ];
 
@@ -949,11 +1155,13 @@ function renderContactPage() {
                   <div class="form-group">
                     <label for="service">Service Needed</label>
                     <select class="form-control" id="service">
-                      <option>Standard Cleaning</option>
-                      <option>Deep Cleaning</option>
-                      <option>Move-In / Move-Out</option>
-                      <option>Airbnb Cleaning</option>
-                      <option>Other / Not Sure</option>
+                          <option>Standard Cleaning</option>
+                          <option>Deep Cleaning</option>
+                          <option>Move-in/Move-out Cleaning</option>
+                          <option>AirBnB Cleaning</option>
+                          <option>Office Cleaning</option>
+                          <option>Post-Construction Cleaning</option>
+                          <option>Professional Janitorial Cleaning</option>
                     </select>
                   </div>
 
@@ -975,22 +1183,22 @@ function renderContactPage() {
                     <div class="info-icon"><i data-lucide="phone"></i></div>
                     <div>
                       <div class="small-muted">Call Us</div>
-                      <strong>123456</strong>
+                      <strong>310-344-0759</strong>
                     </div>
                   </li>
                   <li>
                     <div class="info-icon"><i data-lucide="mail"></i></div>
                     <div>
                       <div class="small-muted">Email Us</div>
-                      <strong>hello@angelcitymaids.com</strong>
+                      <strong>info@angelcitymaid.com</strong>
                     </div>
                   </li>
                   <li>
                     <div class="info-icon"><i data-lucide="clock"></i></div>
                     <div>
                       <div class="small-muted">Business Hours</div>
-                      <strong>Mon - Fri: 8:00 AM - 6:00 PM</strong><br />
-                      <strong>Sat - Sun: 9:00 AM - 4:00 PM</strong>
+                      <strong>Mon - Fri: 7:00 AM - 6:00 PM</strong><br />
+                      <strong>Sat - Sun: 9:00 AM - 5:00 PM</strong>
                     </div>
                   </li>
                 </ul>
@@ -1004,13 +1212,16 @@ function renderContactPage() {
                   <h3 style="color:white;">Service Areas</h3>
                   <p>We proudly serve the Greater Los Angeles area including:</p>
                   <ul class="area-list">
-                    <li>• Los Angeles</li>
-                    <li>• Pasadena</li>
-                    <li>• Santa Monica</li>
-                    <li>• Burbank</li>
-                    <li>• Beverly Hills</li>
-                    <li>• Glendale</li>
-                  </ul>
+  <li>• Los Angeles</li>
+  <li>• West Hollywood</li>
+  <li>• Pasadena</li>
+  <li>• Santa Monica</li>
+  <li>• Burbank</li>
+  <li>• Beverly Hills</li>
+  <li>• Glendale</li>
+  <li>• Studio City</li>
+  <li>• Culver City</li>
+</ul>
                 </div>
               </div>
             </div>
@@ -1026,10 +1237,7 @@ function renderPricingPage() {
     <main style="padding-top: 6rem;">
       <section class="page-hero light">
         <div class="container text-center reveal">
-          <h1>Simple, Transparent Pricing</h1>
-          <p>
-            No hidden fees. Pricing is based on the size of your home and the level of cleaning required.
-          </p>
+          <h1>Pricing</h1>
         </div>
       </section>
 
@@ -1037,27 +1245,12 @@ function renderPricingPage() {
         <div class="container">
           <div class="pricing-grid">
             ${plans.map((plan) => `
-              <div class="price-card ${plan.popular ? "popular" : ""} reveal">
-                ${plan.popular ? `<div class="badge-popular">Most Popular</div>` : ""}
+              <div class="price-card reveal">
                 <div>
                   <h3>${plan.name}</h3>
-                  <p class="small-muted" style="margin-bottom: 1.5rem;">${plan.description}</p>
                   <div class="price-value">${plan.priceRange}</div>
-                  <div class="small-muted">*Varies by home size</div>
                 </div>
-
-                <ul class="feature-list">
-                  ${plan.features.map((feature) => `
-                    <li>
-                      <i data-lucide="check"></i>
-                      <span>${feature}</span>
-                    </li>
-                  `).join("")}
-                </ul>
-
-                <a href="#/contact" class="btn ${plan.popular ? "btn-primary" : ""} full" style="${!plan.popular ? "background: var(--brand-50); color: var(--brand-700);" : ""}">
-                  Book Now
-                </a>
+                <a href="#/contact" class="btn btn-primary full">Book Now</a>
               </div>
             `).join("")}
           </div>
@@ -1087,46 +1280,67 @@ function renderPricingPage() {
 }
 
 function renderServicesPage() {
+  const residential = detailedServices.filter(service =>
+    ["standard", "deep", "move"].includes(service.id)
+  );
+
+  const commercial = detailedServices.filter(service =>
+    ["office", "airbnb", "construction", "janitorial"].includes(service.id)
+  );
+
+  const renderServiceBlock = (service, index) => `
+    <div class="service-detail ${index % 2 === 1 ? "reverse" : ""}">
+      <div class="service-detail-image reveal-${index % 2 === 1 ? "right" : "left"}">
+        <img src="${service.image}" alt="${service.title}" />
+      </div>
+      <div class="reveal-${index % 2 === 1 ? "left" : "right"}">
+        <h2 class="section-title" style="font-size: 2.2rem;">${service.title}</h2>
+
+        ${service.description ? `<p>${service.description}</p>` : ""}
+
+        ${service.time ? `
+          <div class="service-time">
+            <i data-lucide="clock"></i>
+            <span>${service.time}</span>
+          </div>
+        ` : ""}
+
+        ${service.includes.length ? `
+          <h3>Our ${service.title} Services Include</h3>
+          <ul class="feature-list">
+            ${service.includes.map((item) => `
+              <li>
+                <i data-lucide="check-circle-2"></i>
+                <span>${item}</span>
+              </li>
+            `).join("")}
+          </ul>
+        ` : ""}
+
+        <a href="#/contact" class="btn btn-primary">Book This Service</a>
+      </div>
+    </div>
+  `;
+
   return `
     <main style="padding-top: 6rem;">
       <section class="page-hero light">
         <div class="container text-center reveal">
-          <h1>Our Cleaning Services</h1>
-          <p>
-            From routine maintenance to deep scrubbing, we have a cleaning package tailored to your home's unique needs.
-          </p>
+          <h1>Our Services</h1>
         </div>
       </section>
 
       <section class="section section-lg">
         <div class="container services-detail-wrap">
-          ${detailedServices.map((service, index) => `
-            <div class="service-detail ${index % 2 === 1 ? "reverse" : ""}">
-              <div class="service-detail-image reveal-${index % 2 === 1 ? "right" : "left"}">
-                <img src="${service.image}" alt="${service.title}" />
-              </div>
-              <div class="reveal-${index % 2 === 1 ? "left" : "right"}">
-                <h2 class="section-title" style="font-size: 2.2rem;">${service.title}</h2>
-                <p>${service.description}</p>
-                <div class="service-time">
-                  <i data-lucide="clock"></i>
-                  <span>Estimated time: ${service.time}</span>
-                </div>
+          <div class="text-center reveal">
+            <h2 class="section-title">Residential Cleaning</h2>
+          </div>
+          ${residential.map((service, index) => renderServiceBlock(service, index)).join("")}
 
-                <h3>What's Included:</h3>
-                <ul class="feature-list">
-                  ${service.includes.map((item) => `
-                    <li>
-                      <i data-lucide="check-circle-2"></i>
-                      <span>${item}</span>
-                    </li>
-                  `).join("")}
-                </ul>
-
-                <a href="#/contact" class="btn btn-primary">Book This Service</a>
-              </div>
-            </div>
-          `).join("")}
+          <div class="text-center reveal" style="margin-top: 3rem;">
+            <h2 class="section-title">Commercial Cleaning</h2>
+          </div>
+          ${commercial.map((service, index) => renderServiceBlock(service, index)).join("")}
         </div>
       </section>
 
