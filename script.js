@@ -3,7 +3,7 @@ const routes = {
   "/services": renderServicesPage,
   "/pricing": renderPricingPage,
   "/about": renderAboutPage,
-  "/contact": renderContactPage,
+  "/booking": renderBookingPage,
   "/terms": renderTermsPage,
   "/privacy": renderPrivacyPage,
 };
@@ -294,26 +294,50 @@ const detailedServices = [
   {
     id: "standard",
     title: "Standard Cleaning",
-    description: "",
+    description: "Our standard cleaning service is ideal for maintaining a clean, healthy, and welcoming home. Perfect for recurring weekly, bi-weekly, or monthly service.",
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
-    time: "",
-    includes: [],
+    time: "2 - 4 hours",
+    includes: [
+      "Dusting all accessible surfaces",
+      "Vacuuming carpets and rugs",
+      "Mopping hard floors",
+      "Cleaning kitchen counters and sink",
+      "Cleaning bathroom sinks, toilets, tubs, and showers",
+      "Emptying trash bins",
+      "General tidying and straightening",
+    ],
   },
   {
     id: "deep",
     title: "Deep Cleaning",
-    description: "",
+    description: "A more thorough top-to-bottom cleaning service for homes that need extra attention, seasonal resets, or first-time professional service.",
     image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80",
-    time: "",
-    includes: [],
+    time: "4 - 8 hours",
+    includes: [
+      "Everything in Standard Cleaning",
+      "Detailed dusting of baseboards, doors, and frames",
+      "Cleaning window sills and ledges",
+      "Extra attention to bathrooms and kitchen buildup",
+      "Wiping cabinet exteriors",
+      "Cleaning light fixtures and ceiling fans",
+      "Detailed floor and surface care",
+    ],
   },
   {
     id: "move",
     title: "Move-in/Move-out Cleaning",
-    description: "",
+    description: "A detailed cleaning service designed for empty homes, apartments, and transitions so the space is spotless and ready for the next chapter.",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    time: "",
-    includes: [],
+    time: "5 - 10 hours",
+    includes: [
+       "Everything in Deep Cleaning",
+      "Cleaning inside empty cabinets and drawers",
+      "Cleaning inside oven",
+      "Cleaning inside refrigerator",
+      "Spot cleaning walls where needed",
+      "Sweeping patios or entry areas if requested",
+      "Preparing the property for move-in or handoff",
+    ],
   },
   {
     id: "office",
@@ -511,10 +535,10 @@ function updateLogo() {
 
   if (isHome && !isScrolled) {
     // homepage top over purple hero
-    logoImg.src = "img/ANGEL CITY MAIDS Logo-10.png"; 
+    logoImg.src = "img/ANGEL CITY MAIDS Logo-06.png"; 
   } else {
     // scrolled navbar or inner pages
-    logoImg.src = "img/ANGEL CITY MAIDS Logo-09.png";
+    logoImg.src = "img/ANGEL CITY MAIDS Logo-05.png";
   }
 }
 
@@ -744,11 +768,9 @@ function renderCTASection() {
       <div class="blob one"></div>
       <div class="blob two"></div>
       <div class="container cta-inner reveal">
-        <h2 class="cta-title">Ready for a Cleaner Home?</h2>
         <p class="cta-text">
-          Join hundreds of happy customers in Los Angeles. Book your cleaning today and experience the Angel City difference.
         </p>
-        <a href="#/contact" class="btn btn-primary">Book Your Cleaning Today</a>
+        <a href="#/booking" class="btn btn-primary">Book Your Cleaning Today</a>
       </div>
     </section>
   `;
@@ -764,17 +786,24 @@ function renderHeroSection() {
 
       <div class="container">
         <div class="hero-content reveal">
+          <div class="ownership-badge">
+            <i data-lucide="sparkles"></i>
+            <span>Woman-Owned Business</span>
+          </div>
+
           <span class="hero-badge">Premium Cleaning Services in LA</span>
+
           <h1 class="hero-title">
             Professional House Cleaning You Can <span>Trust</span>
           </h1>
+
           <p class="hero-text">
             Reliable, affordable, and high-quality home cleaning services tailored to your busy lifestyle.
             Experience the joy of a spotless home.
           </p>
 
           <div class="hero-actions">
-            <a href="#/contact" class="btn btn-primary">Book a Cleaning</a>
+            <a href="#/booking" class="btn btn-primary">Book a Cleaning</a>
             <a href="#/pricing" class="btn btn-secondary">Get a Free Quote</a>
           </div>
 
@@ -828,7 +857,7 @@ function renderServicesSection() {
             <h3>Need a Custom Clean?</h3>
             <p>Contact us for specialized requests or custom cleaning plans.</p>
             <div style="margin-top: 1rem;">
-              <a href="#/contact" class="btn btn-light">Get a Quote</a>
+              <a href="#/booking" class="btn btn-light">Get a Quote</a>
             </div>
           </div>
         </div>
@@ -1103,129 +1132,34 @@ function renderAboutPage() {
   `;
 }
 
-function renderContactPage() {
+function renderBookingPage() {
   return `
     <main style="padding-top: 6rem; background: var(--brand-50); min-height: 100vh;">
       <section class="section section-lg">
         <div class="container">
+
           <div class="text-center reveal">
-            <h1 class="section-title">Get in Touch</h1>
+            <h1 class="section-title">Book Your Cleaning</h1>
             <p class="section-subtitle">
-              Ready to book a cleaning or have a question? Fill out the form below or reach out to us directly.
-              We'd love to hear from you.
+              Schedule your cleaning in seconds. Choose your service, date, and time — it's that simple.
             </p>
           </div>
 
-          <div class="contact-wrap" style="margin-top: 3rem;">
-            <div class="contact-card reveal-left">
-              <div class="pill">
-                <i data-lucide="clock"></i>
-                <span>We respond within 24 hours</span>
-              </div>
-
-              <div id="contactSuccess" class="success-box" style="display:none;">
-                <div class="success-icon">
-                  <i data-lucide="send"></i>
-                </div>
-                <h3>Message Sent!</h3>
-                <p>Thank you for reaching out. We will get back to you shortly.</p>
-                <button id="sendAnotherBtn" class="btn" style="background:none; color: var(--brand-600); padding: 0; margin-top: 1rem;">
-                  Send another message
-                </button>
-              </div>
-
-              <div id="contactFormWrap">
-                <form id="contactForm">
-                  <div class="form-grid">
-                    <div class="form-group">
-                      <label for="name">Full Name</label>
-                      <input class="form-control" type="text" id="name" placeholder="John Doe" required />
-                    </div>
-                    <div class="form-group">
-                      <label for="phone">Phone Number</label>
-                      <input class="form-control" type="tel" id="phone" placeholder="(310) 555-0198" required />
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input class="form-control" type="email" id="email" placeholder="john@example.com" required />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="service">Service Needed</label>
-                    <select class="form-control" id="service">
-                          <option>Standard Cleaning</option>
-                          <option>Deep Cleaning</option>
-                          <option>Move-in/Move-out Cleaning</option>
-                          <option>AirBnB Cleaning</option>
-                          <option>Office Cleaning</option>
-                          <option>Post-Construction Cleaning</option>
-                          <option>Professional Janitorial Cleaning</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">Message / Details</label>
-                    <textarea class="form-control" id="message" placeholder="Tell us about your home and what you need..."></textarea>
-                  </div>
-
-                  <button type="submit" class="btn btn-primary full">Request a Quote</button>
-                </form>
-              </div>
+          <div class="booking-wrap reveal" style="margin-top: 3rem;">
+            
+            <div class="booking-card">
+              <!-- BookingKoala Embed -->
+              <iframe 
+                src="YOUR_BOOKINGKOALA_LINK_HERE"
+                width="100%" 
+                height="900" 
+                style="border: none; border-radius: 16px;"
+                loading="lazy">
+              </iframe>
             </div>
 
-            <div class="reveal-right">
-              <div class="contact-card" style="margin-bottom: 1.5rem;">
-                <h3>Contact Information</h3>
-                <ul class="info-list">
-                  <li>
-                    <div class="info-icon"><i data-lucide="phone"></i></div>
-                    <div>
-                      <div class="small-muted">Call Us</div>
-                      <strong>310-344-0759</strong>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="info-icon"><i data-lucide="mail"></i></div>
-                    <div>
-                      <div class="small-muted">Email Us</div>
-                      <strong>info@angelcitymaid.com</strong>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="info-icon"><i data-lucide="clock"></i></div>
-                    <div>
-                      <div class="small-muted">Business Hours</div>
-                      <strong>Mon - Fri: 7:00 AM - 6:00 PM</strong><br />
-                      <strong>Sat - Sun: 9:00 AM - 5:00 PM</strong>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="contact-card service-area-card">
-                <div class="bg-icon">
-                  <i data-lucide="map-pin" style="width: 180px; height: 180px;"></i>
-                </div>
-                <div style="position: relative; z-index: 2;">
-                  <h3 style="color:white;">Service Areas</h3>
-                  <p>We proudly serve the Greater Los Angeles area including:</p>
-                  <ul class="area-list">
-  <li>• Los Angeles</li>
-  <li>• West Hollywood</li>
-  <li>• Pasadena</li>
-  <li>• Santa Monica</li>
-  <li>• Burbank</li>
-  <li>• Beverly Hills</li>
-  <li>• Glendale</li>
-  <li>• Studio City</li>
-  <li>• Culver City</li>
-</ul>
-                </div>
-              </div>
-            </div>
           </div>
+
         </div>
       </section>
     </main>
@@ -1250,7 +1184,7 @@ function renderPricingPage() {
                   <h3>${plan.name}</h3>
                   <div class="price-value">${plan.priceRange}</div>
                 </div>
-                <a href="#/contact" class="btn btn-primary full">Book Now</a>
+                <a href="#/booking" class="btn btn-primary full">Book Now</a>
               </div>
             `).join("")}
           </div>
@@ -1317,7 +1251,7 @@ function renderServicesPage() {
           </ul>
         ` : ""}
 
-        <a href="#/contact" class="btn btn-primary">Book This Service</a>
+        <a href="#/booking" class="btn btn-primary">Book This Service</a>
       </div>
     </div>
   `;

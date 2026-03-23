@@ -272,7 +272,7 @@ p {
 }
 
 .site-logo {
-  height: 52px;
+  height: 72px;
   width: auto;
   max-width: 180px;
   display: block;
@@ -479,6 +479,19 @@ position: fixed;
   backdrop-filter: blur(8px);
 }
 
+.booking-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
 .hero-title {
   color: white;
   font-size: clamp(3rem, 6vw, 5.3rem);
@@ -495,6 +508,28 @@ position: fixed;
   font-size: 1.15rem;
   max-width: 680px;
   margin-bottom: 2rem;
+}
+
+.ownership-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+.ownership-badge i {
+  width: 18px;
+  height: 18px;
+  color: var(--gold-400);
 }
 
 .hero-actions {
