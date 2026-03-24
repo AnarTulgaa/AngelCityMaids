@@ -104,14 +104,14 @@ function renderPrivacyPage() {
 
 const services = [
   {
-    title: "Standard Cleaning",
-    description: "Standard Cleaning",
+    title: "Standard Routine Cleaning",
+    description: "Standard Routine Cleaning",
     icon: "home",
     link: "#/services",
   },
   {
-    title: "Deep Cleaning",
-    description: "Deep Cleaning",
+    title: "Deep Cleaning (Most Popular)",
+    description: "Deep Cleaning (Most Popular)",
     icon: "sparkles",
     link: "#/services",
   },
@@ -293,9 +293,10 @@ logo?.addEventListener("click", (e) => {
 const detailedServices = [
   {
     id: "standard",
-    title: "Standard Cleaning",
-    description: "Our standard cleaning service is ideal for maintaining a clean, healthy, and welcoming home. Perfect for recurring weekly, bi-weekly, or monthly service.",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+    title: "Standard Routine Cleaning",
+    description: "Our standard routine cleaning service is ideal for maintaining a clean, healthy, and welcoming home. Perfect for recurring weekly, bi-weekly, or monthly service.",
+    image:
+              "img/Table.jpg",
     time: "2 - 4 hours",
     includes: [
       "Dusting all accessible surfaces",
@@ -309,12 +310,13 @@ const detailedServices = [
   },
   {
     id: "deep",
-    title: "Deep Cleaning",
+    title: "Deep Cleaning (Most Popular)",
     description: "A more thorough top-to-bottom cleaning service for homes that need extra attention, seasonal resets, or first-time professional service.",
-    image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80",
+    image:
+              "img/Stairs.png",
     time: "4 - 8 hours",
     includes: [
-      "Everything in Standard Cleaning",
+      "Everything in Standard Routine Cleaning",
       "Detailed dusting of baseboards, doors, and frames",
       "Cleaning window sills and ledges",
       "Extra attention to bathrooms and kitchen buildup",
@@ -325,26 +327,43 @@ const detailedServices = [
   },
   {
     id: "move",
-    title: "Move-in/Move-out Cleaning",
-    description: "A detailed cleaning service designed for empty homes, apartments, and transitions so the space is spotless and ready for the next chapter.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    time: "5 - 10 hours",
-    includes: [
-       "Everything in Deep Cleaning",
-      "Cleaning inside empty cabinets and drawers",
-      "Cleaning inside oven",
-      "Cleaning inside refrigerator",
-      "Spot cleaning walls where needed",
-      "Sweeping patios or entry areas if requested",
-      "Preparing the property for move-in or handoff",
+  title: "Move-in/Move-out Cleaning",
+  description:
+    "Whether you’re preparing a home for new beginnings or leaving it spotless for the next resident, our move-in/move-out cleaning service ensures every space is fresh, sanitized, and ready. We focus on the details that matter most during transitions, helping take one more thing off your checklist during a busy move.",
+images: [
+  "img/LivingrmGrey.jpg",
+  "img/BlueSofa.jpg"
+],
+  time: "5 - 10 hours",
+  includes: [
+    "Full Property Cleaning",
+    "Dusting all surfaces, baseboards, and fixtures",
+    "Vacuuming carpets and rugs, mopping all floors",
+    "Removing trash and debris",
+    "Kitchen Cleaning",
+    "Cleaning countertops, cabinets, backsplash, and sinks",
+    "Wiping down exterior appliances",
+    "Cleaning inside oven and fridge (optional add-on if applicable)",
+    "Bathroom Cleaning & Sanitizing",
+    "Disinfecting toilets, tubs, showers, and sinks",
+    "Cleaning mirrors, fixtures, and surfaces",
+    "Bedroom & Living Area Reset",
+    "Cleaning closets, shelves, and accessible interior spaces",
+    "Wiping doors, handles, and light switches",
+    "Interior Window & Glass Cleaning",
+    "Removing smudges from mirrors, windows, and glass doors",
+    "Final Touch & Inspection",
+    "Checking that the space is clean, refreshed, and move-ready",
     ],
   },
   {
     id: "office",
     title: "Office Cleaning",
     description:
-      "A clean office isn’t just about appearance—it’s about creating a healthier, more productive environment for your team and a lasting impression for your clients. Our office cleaning services are designed to keep your workspace spotless, organized, and welcoming every day. We specialize in reliable, detail-oriented cleaning tailored to your business needs. From daily maintenance to deep cleaning, our trained professionals use high-quality products and proven techniques to ensure every corner of your office shines. Whether you run a small office or a large corporate space, we provide flexible scheduling, consistent results, and exceptional service you can count on. Let us handle the cleaning—so you can focus on growing your business.",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+      "Our office cleaning services are designed to keep your workspace spotless, organized, and welcoming every day. We specialize in reliable, detail-oriented cleaning tailored to your business needs. From daily maintenance to deep cleaning, our trained professionals use high-quality products and proven techniques to ensure every corner of your office shines.",
+    images: [
+      "img/LivingRmWhite.jpg"
+    ],
     time: "",
     includes: [
       "General Cleaning",
@@ -378,7 +397,9 @@ const detailedServices = [
     title: "AirBnB Cleaning",
     description:
       "Elevate your guest experience with our luxury Airbnb cleaning services. We deliver immaculate, hotel-quality results with meticulous attention to every detail—from pristine linens to perfectly styled spaces. Designed for hosts who expect excellence, our reliable and discreet service ensures your property is always flawless, inviting, and five-star ready.",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+    images: [
+      "img/Bedrm.jpg"
+    ],
     time: "",
     includes: [
       "Full Property Cleaning",
@@ -422,7 +443,9 @@ const detailedServices = [
     title: "Post-Construction Cleaning",
     description:
       "Transform your newly built or renovated space into a flawless, move-in-ready environment. Our post-construction cleaning services deliver meticulous, detail-driven results—removing dust, debris, and residue to reveal a pristine finish. With a focus on precision and excellence, we ensure every surface is polished to perfection, leaving your space clean, refined, and ready to impress.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+    ],
     time: "",
     includes: [
       "Detailed Dust Removal",
@@ -453,7 +476,9 @@ const detailedServices = [
     title: "Professional Janitorial Cleaning",
     description:
       "Maintain a pristine, polished workspace with our premium janitorial cleaning services. We provide consistent, detail-oriented care designed to uphold the highest standards of cleanliness and professionalism. With a focus on reliability, discretion, and excellence, our team ensures your environment remains spotless, healthy, and always ready to impress.",
-    image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=800&q=80",
+    images: [
+      "img/KitchenWhite.jpg"
+    ],
     time: "",
     includes: [
       "Daily & Routine Cleaning",
@@ -491,21 +516,21 @@ const detailedServices = [
 const plans = [
   {
     name: "Basic Cleaning",
-    priceRange: "$150 - $180",
+    priceRange: "$155 - $255",
     description: "",
     features: [],
     popular: false,
   },
   {
-    name: "Deep Cleaning",
-    priceRange: "$220 - $350",
+    name: "Deep Cleaning (Most Popular)",
+    priceRange: "$220 - $375",
     description: "",
     features: [],
     popular: false,
   },
   {
     name: "Move-Out Cleaning",
-    priceRange: "$285 - $450",
+    priceRange: "$285 - $455",
     description: "",
     features: [],
     popular: false,
@@ -786,10 +811,6 @@ function renderHeroSection() {
 
       <div class="container">
         <div class="hero-content reveal">
-          <div class="ownership-badge">
-            <i data-lucide="sparkles"></i>
-            <span>Woman-Owned Business</span>
-          </div>
 
           <span class="hero-badge">Premium Cleaning Services in LA</span>
 
@@ -798,7 +819,7 @@ function renderHeroSection() {
           </h1>
 
           <p class="hero-text">
-            Reliable, affordable, and high-quality home cleaning services tailored to your busy lifestyle.
+            Premium, reliable, and high-quality home cleaning services tailored to your busy lifestyle.
             Experience the joy of a spotless home.
           </p>
 
@@ -808,18 +829,22 @@ function renderHeroSection() {
           </div>
 
           <div class="hero-trust">
-            <div class="trust-item">
-              <div class="trust-icon"><i data-lucide="shield-check"></i></div>
-              <span>Fully Insured</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon"><i data-lucide="award"></i></div>
-              <span>Background Checked</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon"><i data-lucide="thumbs-up"></i></div>
-              <span>Satisfaction Guaranteed</span>
-            </div>
+              <div class="trust-item">
+                <div class="trust-icon"><i data-lucide="sparkles"></i></div>
+                <span>Woman-Owned Business</span>
+              </div>
+              <div class="trust-item">
+                <div class="trust-icon"><i data-lucide="shield-check"></i></div>
+                <span>Fully Insured</span>
+              </div>
+              <div class="trust-item">
+                <div class="trust-icon"><i data-lucide="award"></i></div>
+                <span>Background Checked</span>
+              </div>
+              <div class="trust-item">
+                <div class="trust-icon"><i data-lucide="headset"></i></div>
+                <span>24/7 Customer Support</span>
+              </div>
           </div>
         </div>
       </div>
@@ -1146,18 +1171,16 @@ function renderBookingPage() {
           </div>
 
           <div class="booking-wrap reveal" style="margin-top: 3rem;">
-            
             <div class="booking-card">
-              <!-- BookingKoala Embed -->
-              <iframe 
-                src="YOUR_BOOKINGKOALA_LINK_HERE"
-                width="100%" 
-                height="900" 
-                style="border: none; border-radius: 16px;"
+              <iframe
+                src="https://angelcitymaid.bookingkoala.com/booknow?embed=true"
+                width="100%"
+                height="2500"
+                style="border:none; border-radius:16px;"
+                scrolling="no"
                 loading="lazy">
               </iframe>
             </div>
-
           </div>
 
         </div>
@@ -1189,6 +1212,12 @@ function renderPricingPage() {
             `).join("")}
           </div>
 
+          <div class="text-center reveal" style="margin-top: -2rem; margin-bottom: 2rem;">
+              <p class="section-subtitle" style="font-size: 0.95rem;">
+                Prices may change depending on the number of bedrooms and condition of the state.
+              </p>
+          </div>
+
           <div class="text-center reveal">
             <h2 class="section-title">Optional Add-ons</h2>
             <p class="section-subtitle">Customize your cleaning with these extra services.</p>
@@ -1215,17 +1244,25 @@ function renderPricingPage() {
 
 function renderServicesPage() {
   const residential = detailedServices.filter(service =>
-    ["standard", "deep", "move"].includes(service.id)
+    ["standard", "deep", "move", "airbnb"].includes(service.id)
   );
 
   const commercial = detailedServices.filter(service =>
-    ["office", "airbnb", "construction", "janitorial"].includes(service.id)
+    ["office", "construction", "janitorial"].includes(service.id)
   );
 
   const renderServiceBlock = (service, index) => `
     <div class="service-detail ${index % 2 === 1 ? "reverse" : ""}">
       <div class="service-detail-image reveal-${index % 2 === 1 ? "right" : "left"}">
-        <img src="${service.image}" alt="${service.title}" />
+        <div class="service-image-grid ${
+          service.id === "move"
+            ? "vertical"
+            : ((service.images || [service.image]).length === 1 ? "single" : "double")
+        }">
+          ${(service.images || [service.image]).map(img => `
+            <img src="${img}" alt="${service.title}" />
+          `).join("")}
+        </div>
       </div>
       <div class="reveal-${index % 2 === 1 ? "left" : "right"}">
         <h2 class="section-title" style="font-size: 2.2rem;">${service.title}</h2>
