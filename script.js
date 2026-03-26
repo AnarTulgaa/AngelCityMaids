@@ -1159,10 +1159,9 @@ function renderAboutPage() {
 
 function renderBookingPage() {
   return `
-    <main style="padding-top: 6rem; background: var(--brand-50); min-height: 100vh;">
+    <main class="booking-page">
       <section class="section section-lg">
         <div class="container">
-
           <div class="text-center reveal">
             <h1 class="section-title">Book Your Cleaning</h1>
             <p class="section-subtitle">
@@ -1170,19 +1169,25 @@ function renderBookingPage() {
             </p>
           </div>
 
-          <div class="booking-wrap reveal" style="margin-top: 3rem;">
-            <div class="booking-card">
+          <div class="booking-wrap reveal">
+            <div class="booking-card booking-card--embed">
               <iframe
+                class="booking-iframe"
                 src="https://angelcitymaid.bookingkoala.com/booknow?embed=true"
-                width="100%"
-                height="2500"
-                style="border:none; border-radius:16px;"
-                scrolling="no"
-                loading="lazy">
+                title="Angel City Maids Booking Form"
+                loading="lazy"
+                scrolling="yes">
               </iframe>
             </div>
-          </div>
 
+            <p class="booking-fallback-text">
+              <a
+                href="https://angelcitymaid.bookingkoala.com/booknow"
+                target="_blank"
+                rel="noopener noreferrer">
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     </main>
