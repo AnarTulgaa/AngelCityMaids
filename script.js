@@ -102,48 +102,57 @@ function renderPrivacyPage() {
   `;
 }
 
+
+
 const services = [
   {
+    id: "standard",
     title: "Standard Routine Cleaning",
-    description: "Standard Routine Cleaning",
+    description: "Perfect for recurring weekly, bi-weekly, or monthly upkeep.",
     icon: "home",
-    link: "#/services",
+    link: "#/services/standard",
   },
   {
-    title: "Deep Cleaning (Most Popular)",
-    description: "Deep Cleaning (Most Popular)",
+    id: "deep",
+    title: "Deep Cleaning",
+    description: "Ideal for first-time cleans or homes that need extra attention.",
     icon: "sparkles",
-    link: "#/services",
+    link: "#/services/deep",
   },
   {
+    id: "move",
     title: "Move-in/Move-out Cleaning",
-    description: "Move-in/Move-out Cleaning",
-    icon: "key",
-    link: "#/services",
+    description: "Detailed cleaning for empty homes, apartments, and condos.",
+    icon: "truck",
+    link: "#/services/move",
   },
   {
+    id: "airbnb",
     title: "AirBnB Cleaning",
-    description: "AirBnB Cleaning",
+    description: "Fast and polished turnovers to keep your guests impressed.",
     icon: "building",
-    link: "#/services",
+    link: "#/services/airbnb",
   },
   {
+    id: "office",
     title: "Office Cleaning",
-    description: "Office Cleaning",
+    description: "Professional workspace cleaning for a spotless environment.",
     icon: "briefcase",
-    link: "#/services",
+    link: "#/services/office",
   },
   {
+    id: "construction",
     title: "Post-Construction Cleaning",
-    description: "Post-Construction Cleaning",
+    description: "Remove dust, debris, and residue after renovations or builds.",
     icon: "hammer",
-    link: "#/services",
+    link: "#/services/construction",
   },
   {
+    id: "janitorial",
     title: "Professional Janitorial Cleaning",
-    description: "Professional Janitorial Cleaning",
+    description: "Reliable recurring commercial cleaning tailored to your needs.",
     icon: "shield-check",
-    link: "#/services",
+    link: "#/services/janitorial",
   },
 ];
 
@@ -312,8 +321,10 @@ const detailedServices = [
     id: "deep",
     title: "Deep Cleaning (Most Popular)",
     description: "A more thorough top-to-bottom cleaning service for homes that need extra attention, seasonal resets, or first-time professional service.",
-    image:
-              "img/Stairs.png",
+    images: [
+      "img/Stairs.png",
+      "img/cleaningMirrorBathRm.png"
+    ],
     time: "4 - 8 hours",
     includes: [
       "Everything in Standard Routine Cleaning",
@@ -362,7 +373,8 @@ images: [
     description:
       "Our office cleaning services are designed to keep your workspace spotless, organized, and welcoming every day. We specialize in reliable, detail-oriented cleaning tailored to your business needs. From daily maintenance to deep cleaning, our trained professionals use high-quality products and proven techniques to ensure every corner of your office shines.",
     images: [
-      "img/LivingRmWhite.jpg"
+      "img/cleanersOffice.png",
+      "img/cleaningOffice.png"
     ],
     time: "",
     includes: [
@@ -398,7 +410,8 @@ images: [
     description:
       "Elevate your guest experience with our luxury Airbnb cleaning services. We deliver immaculate, hotel-quality results with meticulous attention to every detail—from pristine linens to perfectly styled spaces. Designed for hosts who expect excellence, our reliable and discreet service ensures your property is always flawless, inviting, and five-star ready.",
     images: [
-      "img/Bedrm.jpg"
+      "img/Bedrm.jpg",
+      "img/cleaningCounter.png"
     ],
     time: "",
     includes: [
@@ -575,10 +588,20 @@ function initRouter() {
 function renderRoute() {
   const path = getCurrentPath();
   const app = document.getElementById("app");
-  const render = routes[path] || renderHomePage;
-  app.innerHTML = render();
 
-  updateNavState(path);
+  let html = "";
+
+  if (path.startsWith("/services/")) {
+    const serviceId = path.split("/")[2];
+    html = renderSingleServicePage(serviceId);
+  } else {
+    const render = routes[path] || renderHomePage;
+    html = render();
+  }
+
+  app.innerHTML = html;
+
+  updateNavState(path.startsWith("/services/") ? "/services" : path);
   updateLogo();
   initPageFeatures(path);
   window.scrollTo(0, 0);
@@ -587,6 +610,82 @@ function renderRoute() {
     lucide.createIcons();
   }
 }
+
+function renderSingleServicePage(serviceId) {
+  const service = detailedServices.find((s) => s.id === serviceId);
+
+  if (!service) {
+    return `
+      <main style="padding-top: 6rem;">
+        <section class="section">
+          <div class="container text-center">
+            <h1>Service Not Found</h1>
+            <p>The service you are looking for does not exist.</p>
+            <a href="#/services" class="btn btn-primary">Back to Services</a>
+          </div>
+        </section>
+      </main>
+    `;
+  }
+
+  const images = service.images || (service.image ? [service.image] : []);
+
+  return `
+    <main style="padding-top: 6rem;">
+      <section class="page-hero light">
+        <div class="container text-center reveal">
+          <h1>${service.title}</h1>
+          <p class="section-subtitle">
+            ${service.description}
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-lg">
+        <div class="container">
+          <div class="grid-2-1" style="align-items: start;">
+            <div class="reveal-left">
+              ${images.length ? `
+                <div class="service-image-grid ${images.length > 1 ? "double" : "single"}">
+                  ${images.map(img => `<img src="${img}" alt="${service.title}" />`).join("")}
+                </div>
+              ` : ""}
+            </div>
+
+            <div class="reveal-right">
+              ${service.time ? `
+                <div class="service-time">
+                  <i data-lucide="clock"></i>
+                  <span>${service.time}</span>
+                </div>
+              ` : ""}
+
+              <h2 class="section-title" style="font-size: 2.2rem;">What's Included</h2>
+
+              <ul class="feature-list">
+                ${service.includes.map(item => `
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span>${item}</span>
+                  </li>
+                `).join("")}
+              </ul>
+
+              <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;">
+                <a href="#/booking" class="btn btn-primary">Book This Service</a>
+                <a href="#/services" class="btn btn-light">Back to All Services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      ${renderCTASection()}
+    </main>
+  `;
+}
+
+
 
 function updateNavState(path) {
   document.querySelectorAll("[data-route]").forEach((link) => {
@@ -853,8 +952,10 @@ function renderHeroSection() {
 }
 
 function renderServicesSection() {
+  const featuredServices = services.slice(0, 3);
+
   return `
-    <section class="section section-muted">
+    <section class="section section-muted home-services">
       <div class="container">
         <div class="text-center reveal">
           <span class="section-label">What We Do</span>
@@ -864,27 +965,28 @@ function renderServicesSection() {
           </p>
         </div>
 
-        <div class="grid-3" style="margin-top: 3rem;">
-          ${services.map((service) => `
-            <div class="card card-hover service-card reveal">
-              <div class="service-icon">
+        <div class="services-clean-grid" style="margin-top: 3rem;">
+          ${featuredServices.map((service) => `
+            <article class="service-clean-card reveal">
+              <div class="service-clean-icon">
                 <i data-lucide="${service.icon}"></i>
               </div>
-              <h3>${service.title}</h3>
-              <p>${service.description}</p>
-              <a href="${service.link}" class="text-link">
-                Learn More <i data-lucide="arrow-right"></i>
-              </a>
-            </div>
-          `).join("")}
 
-          <div class="cta-service-card reveal">
-            <h3>Need a Custom Clean?</h3>
-            <p>Contact us for specialized requests or custom cleaning plans.</p>
-            <div style="margin-top: 1rem;">
-              <a href="#/booking" class="btn btn-light">Get a Quote</a>
-            </div>
-          </div>
+              <h3 class="service-clean-title">${service.title}</h3>
+
+              <p class="service-clean-text">
+                ${service.description}
+              </p>
+
+              <a href="${service.link}" class="service-clean-link">
+                Learn More
+              </a>
+            </article>
+          `).join("")}
+        </div>
+
+        <div class="text-center reveal" style="margin-top: 2rem;">
+          <a href="#/services" class="btn btn-primary">View All Services</a>
         </div>
       </div>
     </section>
@@ -1111,7 +1213,7 @@ function renderAboutPage() {
           </div>
 
           <div class="reveal-right">
-            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&q=80" alt="Team cleaning a kitchen" />
+            <img src="img/cleaningKitchen.png" alt="About us" />
           </div>
         </div>
       </section>
@@ -1248,79 +1350,41 @@ function renderPricingPage() {
 }
 
 function renderServicesPage() {
-  const residential = detailedServices.filter(service =>
-    ["standard", "deep", "move", "airbnb"].includes(service.id)
-  );
-
-  const commercial = detailedServices.filter(service =>
-    ["office", "construction", "janitorial"].includes(service.id)
-  );
-
-  const renderServiceBlock = (service, index) => `
-    <div class="service-detail ${index % 2 === 1 ? "reverse" : ""}">
-      <div class="service-detail-image reveal-${index % 2 === 1 ? "right" : "left"}">
-        <div class="service-image-grid ${
-          service.id === "move"
-            ? "vertical"
-            : ((service.images || [service.image]).length === 1 ? "single" : "double")
-        }">
-          ${(service.images || [service.image]).map(img => `
-            <img src="${img}" alt="${service.title}" />
-          `).join("")}
-        </div>
-      </div>
-      <div class="reveal-${index % 2 === 1 ? "left" : "right"}">
-        <h2 class="section-title" style="font-size: 2.2rem;">${service.title}</h2>
-
-        ${service.description ? `<p>${service.description}</p>` : ""}
-
-        ${service.time ? `
-          <div class="service-time">
-            <i data-lucide="clock"></i>
-            <span>${service.time}</span>
-          </div>
-        ` : ""}
-
-        ${service.includes.length ? `
-          <h3>Our ${service.title} Services Include</h3>
-          <ul class="feature-list">
-            ${service.includes.map((item) => `
-              <li>
-                <i data-lucide="check-circle-2"></i>
-                <span>${item}</span>
-              </li>
-            `).join("")}
-          </ul>
-        ` : ""}
-
-        <a href="#/booking" class="btn btn-primary">Book This Service</a>
-      </div>
-    </div>
-  `;
-
   return `
-    <main style="padding-top: 6rem;">
+    <main style="padding-top: 9rem;">
       <section class="page-hero light">
         <div class="container text-center reveal">
-          <h1>Our Services</h1>
+          <h1>Home Cleaning Service Packages</h1>
+          <p class="section-subtitle">
+            Explore our range of cleaning packages designed to meet your needs.
+            From routine maintenance to deep transformations, we have the perfect solution for every space.
+          </p>
         </div>
       </section>
 
       <section class="section section-lg">
-        <div class="container services-detail-wrap">
-          <div class="text-center reveal">
-            <h2 class="section-title">Residential Cleaning</h2>
-          </div>
-          ${residential.map((service, index) => renderServiceBlock(service, index)).join("")}
+        <div class="container">
+          <div class="services-clean-grid">
+            ${services.map((service) => `
+              <article class="service-clean-card reveal">
+                <div class="service-clean-icon">
+                  <i data-lucide="${service.icon}"></i>
+                </div>
 
-          <div class="text-center reveal" style="margin-top: 3rem;">
-            <h2 class="section-title">Commercial Cleaning</h2>
+                <h3 class="service-clean-title">${service.title}</h3>
+
+                <p class="service-clean-text">
+                  ${service.description}
+                </p>
+
+                <a href="${service.link}" class="service-clean-link">
+                  Learn More
+                </a>
+              </article>
+            `).join("")}
           </div>
-          ${commercial.map((service, index) => renderServiceBlock(service, index)).join("")}
         </div>
       </section>
-
-      ${renderCTASection()}
     </main>
   `;
 }
