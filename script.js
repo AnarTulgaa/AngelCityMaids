@@ -211,7 +211,7 @@ const testimonials = [
   {
     name: "Sarah Jenkins",
     location: "Santa Monica",
-    text: "Angel City Maids did an amazing job. My home has never looked better! The team was punctual, professional, and paid attention to every little detail.",
+    text: "Angel City Maid did an amazing job. My home has never looked better! The team was punctual, professional, and paid attention to every little detail.",
     rating: 5,
   },
   {
@@ -235,7 +235,7 @@ const testimonials = [
   {
     name: "Jessica Walsh",
     location: "Glendale",
-    text: "I love coming home on Thursdays after Angel City Maids has been here. It is the best feeling in the world. Consistent quality every single time.",
+    text: "I love coming home on Thursdays after Angel City Maid has been here. It is the best feeling in the world. Consistent quality every single time.",
     rating: 5,
   },
 ];
@@ -999,7 +999,7 @@ function renderWhyChooseUs() {
       <div class="container">
         <div class="text-center reveal">
           <span class="section-label">The Angel City Difference</span>
-          <h2 class="section-title">Why Choose Angel City Maids?</h2>
+          <h2 class="section-title">Why Choose Angel City Maid?</h2>
           <p class="section-subtitle">
             We don't just clean houses; we care for homes. Here is why thousands of LA residents trust us.
           </p>
@@ -1190,7 +1190,7 @@ function renderAboutPage() {
           <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1920&q=80" alt="Cleaning supplies" />
         </div>
         <div class="container text-center reveal">
-          <h1>About Angel City Maids</h1>
+          <h1>About Angel City Maid</h1>
           <p>Bringing sparkle, trust, and peace of mind to Los Angeles homes since 2018.</p>
         </div>
       </section>
@@ -1200,7 +1200,7 @@ function renderAboutPage() {
           <div class="text reveal-left">
             <h2 class="section-title">Our Story</h2>
             <p>
-              Angel City Maids was founded on a simple premise: finding a reliable, high-quality house cleaner shouldn't be a chore.
+              Angel City Maid was founded on a simple premise: finding a reliable, high-quality house cleaner shouldn't be a chore.
               We saw a gap in the Los Angeles market for a cleaning service that combined modern convenience with old-fashioned attention to detail.
             </p>
             <p>
