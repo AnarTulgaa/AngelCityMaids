@@ -102,7 +102,15 @@ function renderPrivacyPage() {
   `;
 }
 
+function trackPageView(path) {
+  if (typeof gtag !== "function") return;
 
+  gtag('event', 'page_view', {
+    page_title: document.title,
+    page_location: window.location.href,
+    page_path: path
+  });
+}
 
 const services = [
   {
@@ -609,6 +617,8 @@ function renderRoute() {
   if (window.lucide) {
     lucide.createIcons();
   }
+
+  trackPageView(path);
 }
 
 function renderSingleServicePage(serviceId) {
