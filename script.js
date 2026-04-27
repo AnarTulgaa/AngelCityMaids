@@ -1244,7 +1244,7 @@ function renderAboutPage() {
           <div class="stat-box reveal">
             <i data-lucide="shield-check"></i>
             <div class="value">6+</div>
-            <div class="label">Years in Business</div>
+            <div class="label">Years of Industry Experience</div>
           </div>
           <div class="stat-box reveal">
             <i data-lucide="home"></i>
@@ -1272,7 +1272,7 @@ function renderAboutPage() {
 function renderBookingPage() {
   return `
     <main class="booking-page">
-      <section class="section section-lg">
+      <section class="section section-lg" style="padding-bottom: 0;">
         <div class="container">
           <div class="text-center reveal">
             <h1 class="section-title">Book Your Cleaning</h1>
@@ -1280,26 +1280,16 @@ function renderBookingPage() {
               Schedule your cleaning in seconds. Choose your service, date, and time — it's that simple.
             </p>
           </div>
+        </div>
 
-          <div class="booking-wrap reveal">
-            <div class="booking-card booking-card--embed">
-              <iframe
-                class="booking-iframe"
-                src="https://angelcitymaid.bookingkoala.com/booknow?embed=true"
-                title="Angel City Maids Booking Form"
-                loading="lazy"
-                scrolling="yes">
-              </iframe>
-            </div>
-
-            <p class="booking-fallback-text">
-              <a
-                href="https://angelcitymaid.bookingkoala.com/booknow"
-                target="_blank"
-                rel="noopener noreferrer">
-              </a>
-            </p>
-          </div>
+        <div class="reveal" style="width: 100%; margin-top: 3rem;">
+          <iframe
+            class="booking-iframe-full"
+            src="https://angelcitymaid.bookingkoala.com/booknow?embed=true"
+            title="Angel City Maids Booking Form"
+            loading="lazy"
+            scrolling="yes">
+          </iframe>
         </div>
       </section>
     </main>

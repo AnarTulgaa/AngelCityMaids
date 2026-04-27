@@ -514,13 +514,12 @@ position: fixed;
   text-decoration: underline;
 }
 
-.booking-card--embed {
+.booking-iframe-full {
+  display: block;
+  width: 100%;
+  min-height: 3600px; /* Keeps your original height for BookingKoala */
+  border: none;
   background: #fff;
-  border-radius: 24px;
-  border: 1px solid rgba(85, 37, 131, 0.08);
-  box-shadow: 0 24px 60px rgba(18, 12, 32, 0.10);
-  padding: 0;
-  overflow: visible;
 }
 
 .booking-card {
